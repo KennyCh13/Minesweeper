@@ -24,7 +24,13 @@ void setup ()
 }
 public void setMines()
 {
-  //your code
+  while(mines.size() < 1){
+    int r = (int)(Math.random() * NUM_ROWS);
+    int c = (int)(Math.random() * NUM_COLS); 
+    //if(mines.contains(0)){
+
+    //}
+  }
 }
 
 public void draw ()
@@ -49,12 +55,34 @@ public void displayWinningMessage()
 public boolean isValid(int r, int c)
 {
   //your code here
+    if(r >= 0 && c >= 0)
+    if(NUM_ROWS > r && NUM_COLS > c)
+      return true;
   return false;
 }
 public int countMines(int row, int col)
 {
   int numMines = 0;
   //your code here
+  //    //top
+  //    if(isValid(row-1,col-1) && grid[row-1][col-1] == 0)
+  //    numMines++;
+  //    if(isValid(row-1,col) && grid[row-1][col] == true)
+  //    numMines++;
+  //    if(isValid(row-1,col+1) && grid[row-1][col+1] == true)
+  //    numMines++;
+  //    //middle
+  //    if(isValid(row,col-1) && grid[row][col-1] == true)
+  //    numMines++;
+  //    if(isValid(row,col+1) && grid[row][col+1] == true)
+  //    numMines++;
+  //    //bottom
+  //    if(isValid(row+1,col-1) && grid[row+1][col-1] == true)
+  //    numMines++;
+  //    if(isValid(row+1,col) && grid[row+1][col] == true)
+  //    numMines++;
+  //    if(isValid(row+1,col+1) && grid[row+1][col+1] == true)
+  //    numMines++;
   return numMines;
 }
 public class MSButton

@@ -23,6 +23,10 @@ void setup ()
 public void setMines()
 {
     //your code
+     int rRow = (int)(Math.random() * NUM_ROWS);
+     int rCol = (int)(Math.random() * NUM_COLS);
+     
+     mines.add(buttons[rRow][rCol]);
     
 }
 
@@ -56,10 +60,10 @@ public int countMines(int row, int col)
 {
     int numMines = 0;
     //your code here
-    //for(int r = row - 1; r <= row + 1; r++)
-    //  for(int c = col - 1; c <= col + 1; c++)
-    //    numMines++;
-    //    // CODE TO REMOVE MIDDLE
+    for(int r = row - 1; r <= row + 1; r++)
+      for(int c = col - 1; c <= col + 1; c++)
+        numMines++;
+        // CODE TO REMOVE MIDDLE
     return numMines;
 }
 public class MSButton

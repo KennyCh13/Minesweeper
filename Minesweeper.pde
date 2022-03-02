@@ -25,9 +25,12 @@ public void setMines()
     //your code
      int rRow = (int)(Math.random() * NUM_ROWS);
      int rCol = (int)(Math.random() * NUM_COLS);
-     
+      
+     for(int m = 0; m < 5; m++){
      mines.add(buttons[rRow][rCol]);
-    
+     rRow = (int)(Math.random() * NUM_ROWS);
+     rCol = (int)(Math.random() * NUM_COLS);
+     }
 }
 
 public void draw ()

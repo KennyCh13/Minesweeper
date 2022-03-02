@@ -23,7 +23,6 @@ void setup ()
 public void setMines()
 {
     //your code
-    buttons[(int)(Math.random())][(int)(Math.random())];
     
 }
 
@@ -49,12 +48,18 @@ public void displayWinningMessage()
 public boolean isValid(int r, int c)
 {
     //your code here
+    if(r >= 0 && r < NUM_ROWS && c >= 0 && c < NUM_COLS)
+    return true;
     return false;
 }
 public int countMines(int row, int col)
 {
     int numMines = 0;
     //your code here
+    for(int r = row - 1; r <= row + 1; r++)
+      for(int c = col - 1; c <= col + 1; c++)
+        numMines++;
+        // CODE TO REMOVE MIDDLE
     return numMines;
 }
 public class MSButton
@@ -87,8 +92,8 @@ public class MSButton
     {    
         if (flagged)
             fill(0);
-        // else if( clicked && mines.contains(this) ) 
-        //     fill(255,0,0);
+         else if( clicked && mines.contains(this) ) 
+             fill(255,0,0);
         else if(clicked)
             fill( 200 );
         else 
